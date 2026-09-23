@@ -7,3 +7,5 @@ server/public
 .github
 docs
 course-dev
+.env
+.env.*

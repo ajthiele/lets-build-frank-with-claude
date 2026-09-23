@@ -1,0 +1,12 @@
+{
+  // Compiles src/ only, so the output lands at dist/index.js, the path the
+  // Dockerfile runs. Including test/ here would move it to dist/src/index.js.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "rootDir": "src",
+    "outDir": "dist",
+    "sourceMap": true
+  },
+  "include": ["src"]
+}
