@@ -49,7 +49,7 @@ Run Frank locally with `npm run dev` in `server/`. Run the console with `npm run
   - The first tool is `get_status`.
 - **Read-only rule (ADR-002):** no tool may mutate Azure, GitHub, or the filesystem beyond temp space. A write capability requires a new ADR. Do not just add a `create_*` / `delete_*` / `run_*` tool.
 - **Console (ADR-003):** React 18, Vite, and Cloudscape components only, with no second component library and no custom CSS beyond layout glue. It has two pages. *Overview* shows `get_status`. *Tools* lists the MCP-discovered tools and renders a form from each tool's input schema. The UI holds no secrets.
-- **Azure reads (ADR-009, written in class):** at runtime Frank gets `AZURE_CLIENT_ID`, `AZURE_CLIENT_SECRET`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`, and `AZURE_RESOURCE_GROUP`, and uses them through `DefaultAzureCredential` (ADR-010). The resource group is read from the environment at boot, and tools deliberately take **no parameter** for it.
+- **Azure reads (ADR-009, written in class):** at runtime Frank gets `AZURE_CLIENT_ID`, `AZURE_CLIENT_SECRET`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`, and `AZURE_RESOURCE_GROUP`, and uses them through `EnvironmentCredential` (ADR-010, clause superseded by ADR-009). The resource group is read from the environment at boot, and tools deliberately take **no parameter** for it.
 
 ## Pipeline behaviour (deploy.yml)
 
